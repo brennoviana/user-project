@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [message, setMessage] = useState('');
-
+  
   useEffect(() => {
-    fetch('http://localhost:3000/api/data')
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/data`)
       .then(response => response.json())
       .then(data => setMessage(data.message))
       .catch(error => console.error('Erro ao buscar a mensagem:', error));
