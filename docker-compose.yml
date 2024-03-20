@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  express:
+    build:
+      context: ./express-project
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - ./express-project:/usr/src/app
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    container_name: users_manager
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Brenno1234567
+      MONGO_INITDB_DATABASE: users_manager_db
+    volumes:
+      - mongodb_data:/data/db
+
+  react:
+    build:
+      context: ./react-project
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./react-project:/usr/src/app
+
+volumes:
+  mongodb_data:
