@@ -5,8 +5,6 @@ const userSchema = new mongoose.Schema({
     username : String,
     email    : String,
     senha    : String
-});
+},{timestamps: true});
 
-const userModel = mongoose.model('User', userSchema);
-
-export default userModel;
+export const userModel = mongoose.model('User', userSchema);

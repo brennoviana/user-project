@@ -1,7 +1,7 @@
-import config from './envConfig.js';
+import { config } from './envConfig.js';
 import mongoose from 'mongoose';
 
-const connectToDatabase = async () => {
+export const connectToDatabase = async () => {
     try {
         await mongoose.connect(`mongodb://${config.mongoUsername}:${config.mongoPassword}@${config.mongoHost}:${config.mongoPort}/${config.mongoDatabase}?authSource=admin`);
         console.log('Conexão com o MongoDB estabelecida com sucesso.');
@@ -10,5 +10,3 @@ const connectToDatabase = async () => {
         process.exit(1);
     }
 };
-
-export default connectToDatabase;

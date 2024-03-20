@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import userController from '../controller/userController.js';
+import { userController } from '../controller/userController.js';
 
 const userRoutes = Router();
 
@@ -9,4 +9,4 @@ userRoutes.post('/', userController.post);
 
 userRoutes.delete('/:id', userController.delete);
 
-export default userRoutes;
+export { userRoutes };

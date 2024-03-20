@@ -1,13 +1,18 @@
 import express from 'express';
-import userRoutes from '../modules/user/routes/userRoutes.js';
+import cors from 'cors';
+import { userRoutes } from '../modules/user/routes/userRoutes.js';
 
 const app = express();
 
-app.get('/api/data', (req, res) => {
-    res.json({ message: 'Hello from Express' });
-  });
-
+//Middlewares
+app.use(cors());
 app.use(express.json());
+
+app.get('/api/data', (req, res) => {
+  res.json({ message: 'Hello from Express' });
+});
+
+//Routes
 app.use('/users', userRoutes);
 
-export default app;
+export { app };

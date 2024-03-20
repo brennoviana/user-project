@@ -1,4 +1,4 @@
-import userModel from "../model/userModel.js";
+import { userModel } from "../model/userModel.js";
 
 class UserController {
   async getAll(req, res) {
@@ -9,7 +9,7 @@ class UserController {
         return res.status(404).send({ message: 'Nenhum usuário cadastrado'})
       };
 
-      res.send(users);
+      res.status(200).send(users);
     } catch (error) {
       console.error(error);
       res.status(500).send({ message: 'Erro interno do servidor'});
@@ -40,4 +40,5 @@ class UserController {
   };
 }
 
-export default new UserController();
+const userController = new UserController();
+export { userController };

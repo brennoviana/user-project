@@ -1,6 +1,6 @@
 import 'dotenv/config'
 
-export default {
+export const config =  {
   mongoUsername: process.env.MONGO_USERNAME,
   mongoPassword: process.env.MONGO_PASSWORD,
   mongoHost: process.env.MONGO_HOST,
