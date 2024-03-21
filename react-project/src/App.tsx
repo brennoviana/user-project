@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import { config } from './config/envConfig'
 
 function App() {
   const [message, setMessage] = useState('');
   
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/data`)
+    fetch(`${config.backend_url}/api/data`)
       .then(response => response.json())
       .then(data => setMessage(data.message))
       .catch(error => console.error('Erro ao buscar a mensagem:', error));
