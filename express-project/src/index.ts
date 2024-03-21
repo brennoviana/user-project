@@ -1,6 +1,6 @@
-import { app } from './app/app.js';
-import { config } from './config/envConfig.js';
-import { connectToDatabase } from './config/dbConfig.js'
+import { app } from './app/app';
+import { config } from './config/envConfig';
+import { connectToDatabase } from './config/dbConfig'
 
 const PORT = config.port;
 connectToDatabase();
