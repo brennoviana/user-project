@@ -1,18 +1,19 @@
-import express from 'express';
-import cors from 'cors';
-import { userRoutes } from '../modules/user/routes/userRoutes.js';
-
-const app = express();
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.app = void 0;
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const userRoutes_1 = require("../modules/user/routes/userRoutes");
+const app = (0, express_1.default)();
+exports.app = app;
 //Middlewares
-app.use(cors());
-app.use(express.json());
-
+app.use((0, cors_1.default)());
+app.use(express_1.default.json());
 app.get('/api/data', (req, res) => {
-  res.json({ message: 'Hello from Express' });
+    res.json({ message: 'Hello from Express' });
 });
-
 //Routes
-app.use('/users', userRoutes);
-
-export { app };
+app.use('/users', userRoutes_1.userRoutes);
