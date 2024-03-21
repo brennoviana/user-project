@@ -3,7 +3,9 @@
     "target": "ESNext",
     "module": "CommonJS",
     "outDir": "./dist",
+    "sourceMap": true,
     "esModuleInterop": true,
     "moduleResolution": "node"
-  }
+  },
+  "include": ["src/**/*.ts"]
 }

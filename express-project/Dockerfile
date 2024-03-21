@@ -9,5 +9,8 @@ COPY . .
 RUN npm install
 
 EXPOSE 3000
+EXPOSE 9229
 
-CMD ["sh", "-c", "npm run build && node dist/index.js"]
+ENV NODE_OPTIONS="--inspect=0.0.0.0:9229"
+
+CMD ["sh", "-c", "npm run build && node --inspect=0.0.0.0:9229 dist/index.js"]

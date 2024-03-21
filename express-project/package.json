@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "tsc",
-    "dev": "node src/index.js"
+    "dev": "node dist/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

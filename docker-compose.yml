@@ -9,6 +9,7 @@ services:
       - "9229:9229"
     volumes:
       - ./express-project:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - mongodb
 
