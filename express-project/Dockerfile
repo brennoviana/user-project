@@ -1,4 +1,4 @@
-FROM node:20.11.1
+FROM node:21.7.1
 
 WORKDIR /usr/src/app
 
@@ -10,8 +10,8 @@ RUN npm install
 EXPOSE 3000
 EXPOSE 9229
 
-#START
-# CMD ["sh", "-c", "npm run build && node dist/index.js"]
-
 #DEV
 CMD ["npm", "run", "dev"]
+
+#START
+# CMD ["npm", "run", "start"]
