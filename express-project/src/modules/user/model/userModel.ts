@@ -1,10 +1,10 @@
 import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema({
-    nome     : String,
+    name     : String,
     username : String,
     email    : String,
-    senha    : String
+    password    : String
 },{timestamps: true});
 
 export const userModel = mongoose.model('User', userSchema);

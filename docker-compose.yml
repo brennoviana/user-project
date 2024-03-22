@@ -32,6 +32,8 @@ services:
       - "3001:3001"
     volumes:
       - ./react-project:/usr/src/app
+    depends_on:
+      - express
 
 volumes:
   mongodb_data:
