@@ -4,9 +4,10 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
 
-COPY . .
+COPY . . 
+
+RUN npm install
 
 EXPOSE 3001
 
