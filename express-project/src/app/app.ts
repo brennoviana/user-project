@@ -8,10 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/api/data', (req: Request, res: Response) => {
-  res.json({ message: 'Hello from Express' });
-});
-
 //Routes
 app.use('/users', userRoutes);
 
