@@ -39,6 +39,25 @@ class UserController {
       res.status(500).send({ Error: error});
     }
   };
+
+  async update(req: Request, res: Response) {
+    try {
+      const updatedUser = await userModel.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true, runValidators: true }
+      );
+
+      if (!updatedUser) {
+        return res.status(404).send({ message: 'Usuário não encontrado!' });
+      }
+
+      res.status(200).send(updatedUser);
+    } catch (error) {
+      console.error(error);
+      res.status(400).send({ Error: error });
+    }
+  };
 }
 
 const userController = new UserController();
